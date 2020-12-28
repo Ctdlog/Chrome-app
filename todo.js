@@ -21,11 +21,14 @@ function saveToDos() {
   localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
 }
 
+let idNumbers = 1;
+
 function paintToDo(text) {
   const li = document.createElement("li");
   const delBtn = document.createElement("button");
   const span = document.createElement("span");
-  const newId = toDos.length + 1;
+  const newId = idNumbers;
+  idNumbers += 1;
   delBtn.innerHTML = "❌";
   delBtn.addEventListener("click", deleteToDo);
   span.innerText = text;
